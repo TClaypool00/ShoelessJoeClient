@@ -1,0 +1,28 @@
+nav {
+    width: 100%;
+    background-color: #D6EFFF;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    /* display: inline; */
+    margin: 0 2vw;
+    font-size: 3vh;
+}
+
+a {
+    text-decoration: none;
+    color: black; /* Change fcolor to something else */
+    padding: 2vw;
+    /* Have a global font fmaily */
+}
+
+a:hover {
+    color: #C6E9FF; /* Change this to something else */
+}
