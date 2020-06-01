@@ -1,5 +1,3 @@
-import {Users } from './users'
-
 export interface Shoes {
     ShoeId: number;
     BothShoes: boolean;
@@ -8,5 +6,7 @@ export interface Shoes {
     Color: string;
     RightSize?: number;
     leftSize?: number;
+    isSold: boolean;
+
     UserId: number;
 }

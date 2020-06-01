@@ -1,5 +1,3 @@
-import {Shoes} from './shoes'
-
 export interface Users {
     UserId: number;
     FirstName:string;
@@ -12,6 +10,4 @@ export interface Users {
     State: string;
     Zip : number;
     PhoneNumber: string;
-
-    Shoes: Shoes[];
 }
