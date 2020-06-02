@@ -1,0 +1,7 @@
+.listOfShoes {
+    float: left;
+    margin: 2%;
+    padding: 3%;
+    border: 5px solid blue;
+    text-align: left;
+}

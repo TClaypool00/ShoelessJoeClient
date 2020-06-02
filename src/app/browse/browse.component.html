@@ -1,1 +1,18 @@
-<p>browse works!</p>
+<div *ngIf="shoes.length > 0">
+    <div id="Main-Container">
+        <h2>Browse Page</h2>
+        <br />
+        <div *ngFor="let shoe of shoes;">
+            <div class="listOfShoes">
+                <p><b>Manufacter:</b>{{this.shoe.manufacter}}</p>
+                <p><b>Model:</b>{{this.shoe.model}}</p>
+                <p><b>Color:</b>{{this.shoe.color}}</p>
+                <p><b>Both Shoes:</b>{{this.shoe.bothShoes}}</p>
+                <p><b>Left Size:</b>{{this.shoe?.leftSize}}</p>
+                <p><b>Right Size:</b>{{this.shoe?.rightSize}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ></div>

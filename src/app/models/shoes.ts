@@ -1,12 +1,12 @@
 export interface Shoes {
-    ShoeId: number;
-    BothShoes: boolean;
-    Manufacter: string;
-    Model: string;
-    Color: string;
-    RightSize?: number;
+    shoeId: number;
+    bothShoes: boolean;
+    manufacter: string;
+    model: string;
+    color: string;
+    rightSize?: number;
     leftSize?: number;
     isSold: boolean;
 
-    UserId: number;
+    userId: number;
 }

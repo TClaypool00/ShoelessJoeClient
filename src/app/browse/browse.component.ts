@@ -18,6 +18,7 @@ export class BrowseComponent implements OnInit {
   constructor(public service: ShoesService) { }
 
   ngOnInit(): void {
+    this.getShoes();
   }
 
   getShoes() {
