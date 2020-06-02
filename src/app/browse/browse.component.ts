@@ -34,6 +34,16 @@ export class BrowseComponent implements OnInit {
       );
   }
 
+  getShoe(id:number) {
+    return this.service.getShoeById(id)
+      .then (
+        shoe => {
+          this.shoe = shoe;
+          alert("Shoe " + id)
+        }
+      )
+  }
+
   resetError() {
     this.error = undefined;
   }
