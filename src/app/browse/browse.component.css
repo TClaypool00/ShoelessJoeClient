@@ -2,8 +2,13 @@
     float: left;
     margin: 2%;
     padding: 3%;
-    border: 5px solid blue;
-    text-align: left;
+	text-align: left;
+	background-color: white;
+	margin-bottom: 10%;
+}
+
+	.listOfShoes:hover {
+	border: 5px solid blue;
 }
 
 .myButton {
