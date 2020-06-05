@@ -16,13 +16,19 @@ li {
     font-size: 3vh;
 }
 
-a {
+.menu-item {
     text-decoration: none;
     color: black; /* Change fcolor to something else */
     padding: 2vw;
+    float: left;
+    /* display: block; */
     /* Have a global font fmaily */
 }
 
-a:hover {
+.menu-item:hover {
     color: #C6E9FF; /* Change this to something else */
+}
+
+.menu-item.right {
+    float: right;
 }
