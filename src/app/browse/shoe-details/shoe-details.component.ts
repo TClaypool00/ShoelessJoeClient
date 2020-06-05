@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import  {Shoes } from "../../models/shoes"
+import { ShoesService } from 'src/app/services/shoes.service';
 
 @Component({
   selector: 'app-shoe-details',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shoe-details.component.css']
 })
 export class ShoeDetailsComponent implements OnInit {
+  shoe: Shoes;
 
-  constructor() { }
+  constructor(public service: ShoesService) { }
 
   ngOnInit(): void {
   }
+
+  reciveId($event) {
+    this.shoe = $event;
+  } 
 
 }

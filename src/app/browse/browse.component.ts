@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Shoes } from '../models/shoes';
 import { ShoesService } from '../services/shoes.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-browse',
@@ -15,7 +16,7 @@ export class BrowseComponent implements OnInit {
   error:string | undefined;
   errorMessage: string;
 
-  constructor(public service: ShoesService) { }
+  constructor(public service: ShoesService, private router: Router) { }
 
   ngOnInit(): void {
     this.getShoes();
@@ -39,7 +40,7 @@ export class BrowseComponent implements OnInit {
       .then (
         shoe => {
           this.shoe = shoe;
-          alert("Shoe " + id)
+          this.router.navigateByUrl('/shoe-details/' + id);
         }
       )
   }
