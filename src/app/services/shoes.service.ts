@@ -8,8 +8,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ShoesService {
   header:any;
-  list:Shoes;
-
 
   constructor(private http:HttpClient, ) {
     const headerSettings: { [name: string]: string | string[]; } = {};
