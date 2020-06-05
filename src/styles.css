@@ -1,3 +1,14 @@
+/* Color Scheme 
+
+#EAEBED Cultured
+#006989 Blue Sapphire
+#A3BAC3 Pewter Blue
+#007090 CG Blue
+#01A7C2 Pacific Blue
+
+*/
+
+
 /* You can add global styles to this file, and also import other style files */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 *:focus {
@@ -8,13 +19,16 @@ body {
     margin: 0%;
     padding: 2%;
     font-size: 1.5em;
-	background-color: grey;
+	background-color: #A3BAC3;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 }
 
 h2 {
-    text-align: center;
+	text-align: center;
+	margin: 0 0 20px 0;
+	font-weight: 300;
+	font-size: 28px;
 }
 
 p{
@@ -22,15 +36,23 @@ p{
     margin-bottom: 4%;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: #006989;
+}
+
 /* CSS for all buttons */
 .myButton {
-	box-shadow: 0px 10px 14px -7px #276873;
+	box-shadow: 0px 10px 14px -7px #006989;
 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
 	background-color:#599bb3;
 	border-radius:8px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:#EAEBED;
 	font-family:Arial;
 	font-size:20px;
 	font-weight:bold;
