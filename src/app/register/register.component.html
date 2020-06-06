@@ -5,21 +5,21 @@
 
             <div class="item">
                 <input type="text" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors  }" placeholder="First Name">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                     <div *ngIf="f.firstName.errors.required">First name is required</div>
                 </div>
             </div>
 
             <div class="item">
                 <input type="text" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors  }" placeholder="Last Name">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                     <div *ngIf="f.lastName.errors.required">Last name is required</div>
                 </div>
             </div>
 
             <div class="item">
                 <input type="text" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors  }" placeholder="Email Address">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                     <div *ngIf="f.email.errors.required">Email is required</div>
                 </div>
             </div>
@@ -29,42 +29,42 @@
 
             <div class="item">
                 <input type="text" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors  }" placeholder="Password">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required</div>
                 </div>
             </div>
 
             <div class="item">
                 <input type="text" formControlName="phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors  }"   placeholder="Phone Number">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
                     <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
                 </div>
             </div>
 
             <div class="item">
                 <input type="text" formControlName="street" [ngClass]="{ 'is-invalid': submitted && f.street.errors  }" placeholder="Street Address">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
                     <div *ngIf="f.street.errors.required">Street Address is required</div>
                 </div>
             </div>
 
             <div class="item">
                 <input type="text" formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors  }" placeholder="City">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                     <div *ngIf="f.city.errors.required">City is required</div>
                 </div>
             </div>
 
             <div class="item">
                 <input type="text" formControlName="state" [ngClass]="{ 'is-invalid': submitted && f.state.errors  }" placeholder="State">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                     <div *ngIf="f.state.errors.required">State is required</div>
                 </div>
             </div>
 
             <div class="item">
                 <input type="text" formControlName="zip" [ngClass]="{ 'is-invalid': submitted && f.zip.errors  }" placeholder="Zip Code">
-                <div class="invalid-feedback">
+                <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
                     <div *ngIf="f.zip.errors.required">Zip Code is required</div>
                 </div>
             </div>
@@ -72,11 +72,11 @@
             <button class="myButton">Register</button>
         </div>
         <div class="login">
-            <span class="loginwith">Sign in with <br /> social network</span>
+            <h2>Sign in with Soical Network</h2>
             <button class="social-signin facebook"> Login in with Facebook </button>
             <button class="social-signin twitter"> Log in with Twitter </button>
             <button class="social-signin google"> Log in with Google+ </button>
-            <button class="myButton">Log in with Email</button>
+            <button class="social-signin email">Log in with Email</button>
         </div>
         <div id="or">OR</div>
     </div>

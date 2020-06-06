@@ -46,6 +46,8 @@ input[type="password"]:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     line-height: 40px;
     text-align: center;
+    margin-top: 30%;
+    margin-left: 7%;
 }
 
 .login {
@@ -59,6 +61,7 @@ input[type="password"]:focus {
     background-size: cover;
     background-position: center;
     border-radius: 0 2px 2px 0;
+    margin-top: 30%;
 }
 
 .login .loginwith {
@@ -103,4 +106,13 @@ button.social-signin.twitter {
 
 button.social-signin.google {
   background: #DD4B39;
+}
+
+button.social-signin.email {
+  background: #5599AE;
+}
+
+div.invalid-feedback {
+  font-size: small;
+  color: red;
 }

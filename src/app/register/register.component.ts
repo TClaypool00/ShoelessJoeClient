@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Users } from "../models/users";
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { UsersService } from "../services/users.service";
 // Add Toastr later
 
 @Component({
@@ -13,10 +14,9 @@ import { Router } from "@angular/router";
 export class RegisterComponent implements OnInit {
   submitted = false;
   loading = false;
-  error: string | undefined;;
-  RegisterForm: FormGroup
-
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  error: string | undefined;
+  RegisterForm: FormGroup;
+  constructor(private formBuilder: FormBuilder, private router: Router, private service: UsersService) { }
   
   ngOnInit(): void {
     this.RegisterForm = this.formBuilder.group({
@@ -62,17 +62,17 @@ export class RegisterComponent implements OnInit {
       zip: this.RegisterForm.value.zip,
       phoneNumber: this.RegisterForm.value.phoneNumber
     };
-    // this.service.postUser(newUser)
-    // .then(
-    //   user => {
-    //     if(this.error) {
-    //       this.router.navigate(['/login']);
-    //     } else {
-    //       this.resetError();
-    //     }
-    //   },
-    //   error => this.handleError(error)
-    // );
+    this.service.postUser(newUser)
+    .then(
+      user => {
+        if(this.error) {
+          this.router.navigate(['/login']);
+        } else {
+          this.resetError();
+        }
+      },
+      error => this.handleError(error)
+    );
     
   }
 }
