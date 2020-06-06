@@ -24,6 +24,19 @@ body {
 	font-weight: 300;
 }
 
+#container {
+    position: relative;
+    margin: 5% auto;
+    width: 50%;
+	height: 850px;
+	height: auto;
+    background: #EAEBED;
+    border-radius: 2px;
+	box-shadow: 5px 10px;
+	padding: 2%;
+	border-radius: 4%;
+}
+
 h2 {
 	text-align: center;
 	margin: 0 0 20px 0;

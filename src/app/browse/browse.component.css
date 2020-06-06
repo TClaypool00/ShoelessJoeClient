@@ -5,8 +5,11 @@
 	text-align: left;
 	background-color: #EAEBED;
 	margin-bottom: 10%;
+	border-radius: 4%;
+	box-shadow: 10px 5px;
 }
 
 	.listOfShoes:hover {
 	border: 5px solid #006989;
+	cursor: pointer;
 }
