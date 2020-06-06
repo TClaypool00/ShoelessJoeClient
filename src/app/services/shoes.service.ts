@@ -27,7 +27,7 @@ export class ShoesService {
     .toPromise();
    }
 
-   postUser(shoe: Shoes) {
+   PostShoe(shoe: Shoes) {
     return this.http.post<Shoes>(`${this.baseUrl}Shoes`, shoe)
     .toPromise();
    }
