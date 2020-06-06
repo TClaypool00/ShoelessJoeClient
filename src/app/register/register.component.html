@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="on">
+<form [formGroup]="RegisterForm" (ngSubmit)="Register()" autocomplete="on">
     <div id="container" class="registerLogin">
         <div class="register">
             <h2>Register</h2>
@@ -42,9 +42,9 @@
             </div>
 
             <div class="item">
-                <input type="text" formControlName="address" [ngClass]="{ 'is-invalid': submitted && f.address.errors  }" placeholder="Street Address">
+                <input type="text" formControlName="street" [ngClass]="{ 'is-invalid': submitted && f.street.errors  }" placeholder="Street Address">
                 <div class="invalid-feedback">
-                    <div *ngIf="f.address.errors.required">Street Address is required</div>
+                    <div *ngIf="f.street.errors.required">Street Address is required</div>
                 </div>
             </div>
 
@@ -56,14 +56,14 @@
             </div>
 
             <div class="item">
-                <input type="text" formControlName="state" ngClass]="{ 'is-invalid': submitted && f.state.errors  }" placeholder="State">
+                <input type="text" formControlName="state" [ngClass]="{ 'is-invalid': submitted && f.state.errors  }" placeholder="State">
                 <div class="invalid-feedback">
                     <div *ngIf="f.state.errors.required">State is required</div>
                 </div>
             </div>
 
             <div class="item">
-                <input type="text" formControlName="zip" ngClass]="{ 'is-invalid': submitted && f.zip.errors  }" placeholder="Zip Code">
+                <input type="text" formControlName="zip" [ngClass]="{ 'is-invalid': submitted && f.zip.errors  }" placeholder="Zip Code">
                 <div class="invalid-feedback">
                     <div *ngIf="f.zip.errors.required">Zip Code is required</div>
                 </div>
