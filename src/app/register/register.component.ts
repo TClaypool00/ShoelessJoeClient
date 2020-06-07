@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      isAdmin: [''],
+      isAdmin: [false, Validators.required],
       street: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
@@ -60,7 +60,8 @@ export class RegisterComponent implements OnInit {
       city: this.RegisterForm.value.city,
       state: this.RegisterForm.value.state,
       zip: this.RegisterForm.value.zip,
-      phoneNumber: this.RegisterForm.value.phoneNumber
+      phoneNumber: this.RegisterForm.value.phoneNumber,
+      token: this.RegisterForm.value.token
     };
     this.service.postUser(newUser)
     .then(
