@@ -13,6 +13,7 @@ import { BrowseComponent } from './browse/browse.component';
 import { ShoeDetailsComponent } from './browse/shoe-details/shoe-details.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     BrowseComponent,
     ShoeDetailsComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
