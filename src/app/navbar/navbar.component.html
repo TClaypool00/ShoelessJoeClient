@@ -2,6 +2,8 @@
     <ul>
         <li><a routerLink = "/home" class="menu-item">Home</a></li>
         <li><a routerLink = "/browse" class="menu-item">Browse</a></li>
-        <li><a routerLink = "/register" class="menu-item right">Register</a></li>
+        <li *ngIf="currentUser.isAdmin == true || !currentUser"><a routerLink = "/register" class="menu-item right">Register</a></li>
+        <li *ngIf="currentUser" class="menu-item right">Hi {{ this.currentUser.firstName }}</li>
+        <li *ngIf="currentUser"><a class="mneu-item right" (click) ="logout()" > Logout</a></li>
 </ul>
 </nav>

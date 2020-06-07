@@ -1,7 +1,7 @@
 //Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 //Components
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { ShoeDetailsComponent } from './browse/shoe-details/shoe-details.compone
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
+import { ErrorInterceptor, JwtInterceptor } from './helper';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,12 @@ import { AlertComponent } from './alert/alert.component';
     HttpClientModule,
     HttpClientModule,
   ],
-  providers: [HttpClient],
+  providers: [
+    HttpClient,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+      { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
