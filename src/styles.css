@@ -57,8 +57,8 @@ a {
 	font-weight: bold;
 }
 
-a:visited {
-	color: #006989;
+a:hover {
+	color: #01A7C2;
 }
 
 /* CSS for all buttons */
