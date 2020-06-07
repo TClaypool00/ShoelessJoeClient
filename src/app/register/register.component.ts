@@ -61,7 +61,6 @@ export class RegisterComponent implements OnInit {
       state: this.RegisterForm.value.state,
       zip: this.RegisterForm.value.zip,
       phoneNumber: this.RegisterForm.value.phoneNumber,
-      token: this.RegisterForm.value.token
     };
     this.service.postUser(newUser)
     .then(
@@ -74,6 +73,9 @@ export class RegisterComponent implements OnInit {
       },
       error => this.handleError(error)
     );
-    
+
+    setTimeout(() => {
+      this.router.navigate(['/login'])
+    }, 5000);
   }
 }

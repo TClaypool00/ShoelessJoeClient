@@ -10,5 +10,5 @@ export interface Users {
     state: string;
     zip : number;
     phoneNumber: string;
-    token: string;
+    token?: string;
 }
