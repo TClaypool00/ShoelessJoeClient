@@ -17,6 +17,7 @@ import { AlertComponent } from './alert/alert.component';
 import { ErrorInterceptor, JwtInterceptor } from './helper';
 import { ShoesFormComponent } from './shoes-form/shoes-form.component';
 import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
+import { EditProfileComponent } from './navbar/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
     RegisterComponent,
     AlertComponent,
     ShoesFormComponent,
-    UserShoesComponent
+    UserShoesComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
