@@ -10,6 +10,6 @@
 }
 
 	.listOfShoes:hover {
-	border: 5px solid #006989;
+	background-color: #006989;
 	cursor: pointer;
 }
