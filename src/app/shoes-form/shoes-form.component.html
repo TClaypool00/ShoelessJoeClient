@@ -1,3 +1,47 @@
 <div id="container">
     <h2>Submit your shoe(s)</h2>
+    <form [formGroup]="shoeForm" (ngSubmit)="submit()" autocomplete="on">
+
+        <div class="item">
+            <input type="text" formControlName="manufacter"
+                [ngClass]="{ 'is-invalid': submitted && f.manufacter.errors  }" placeholder="Manufacter">
+            <div *ngIf="submitted && f.manufacter.errors" class="invalid-feedback">
+                <div *ngIf="f.manufacter.errors.required">Manufacter is required</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <input type="text" formControlName="model"
+                [ngClass]="{ 'is-invalid': submitted && f.model.errors  }" placeholder="Model">
+            <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+                <div *ngIf="f.model.errors.required">Model is required</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <input type="text" formControlName="color"
+                [ngClass]="{ 'is-invalid': submitted && f.color.errors  }" placeholder="Color">
+            <div *ngIf="submitted && f.color.errors" class="invalid-feedback">
+                <div *ngIf="f.color.errors.required">Color is required</div>
+            </div>
+        </div>
+
+        <div class="item" >
+            <input type="checkbox" class="checkbox" fomrControlName="bothShoes"> <label for="checkbox"> Both Shoes?</label>
+        </div>
+
+        <div class="item">
+            <input type="number" formControlName="rightSize"
+                [ngClass]="{ 'is-invalid': submitted }" placeholder="Right Size">
+        </div>
+
+        <div class="item">
+            <input type="number" formControlName="leftSize"
+                [ngClass]="{ 'is-invalid': submitted }" placeholder="Left Size"> 
+        </div>
+
+        <input type="checkbox" formControlName="isSold" hidden>
+
+        <button type="submit" class="myButton">Submit</button>
+    </form>
 </div>

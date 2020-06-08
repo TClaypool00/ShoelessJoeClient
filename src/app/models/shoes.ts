@@ -1,5 +1,5 @@
 export interface Shoes {
-    shoeId: number;
+    shoeId?: number;
     bothShoes: boolean;
     manufacter: string;
     model: string;
@@ -9,4 +9,6 @@ export interface Shoes {
     isSold: boolean;
 
     userId: number;
+    userFirstName: string;
+    userLastName: string;
 }
