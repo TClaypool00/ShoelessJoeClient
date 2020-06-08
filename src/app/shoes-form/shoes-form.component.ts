@@ -11,7 +11,7 @@ import { AuthenticationService, UsersService, ShoesService } from '../services'
   styleUrls: ['./shoes-form.component.css']
 })
 export class ShoesFormComponent implements OnInit {
-  submited = false;
+  submitted = false;
   loading = false;
   error: string | undefined;
   shoeForm: FormGroup;
@@ -48,7 +48,7 @@ export class ShoesFormComponent implements OnInit {
   get f() { return this.shoeForm.controls; }
 
   submit() {
-    this.submited = true;
+    this.submitted = true;
     this.loading = true;
     const newShoe: Shoes = {
       bothShoes: this.shoeForm.value.bothShoes,

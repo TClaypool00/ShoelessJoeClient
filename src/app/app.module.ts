@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { ErrorInterceptor, JwtInterceptor } from './helper';
 import { ShoesFormComponent } from './shoes-form/shoes-form.component';
+import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ShoesFormComponent } from './shoes-form/shoes-form.component';
     ShoeDetailsComponent,
     RegisterComponent,
     AlertComponent,
-    ShoesFormComponent
+    ShoesFormComponent,
+    UserShoesComponent
   ],
   imports: [
     BrowserModule,

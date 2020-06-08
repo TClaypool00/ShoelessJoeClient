@@ -1,34 +1,56 @@
-nav {
+.navbar {
     width: 100%;
     background-color: #EAEBED;
+    overflow: hidden;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-li {
-    list-style-type: none;
-    /* display: inline; */
-    margin: 0 2vw;
-    font-size: 3vh;
-}
-
-.menu-item {
-    text-decoration: none;
-    color: black; /* Change fcolor to something else */
-    padding: 2vw;
+.navbar a {
     float: left;
-    /* display: block; */
-    /* Have a global font fmaily */
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.menu-item:hover {
-    color: #006989; /* Change this to something else */
+.dropdown {
+    float: left;
+    overflow: hidden;
 }
 
-.menu-item.right {
-    float: right;
+.dropdown .dropbtn {
+    font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #006989;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover, .dropdown-content {
+    display: block;
 }

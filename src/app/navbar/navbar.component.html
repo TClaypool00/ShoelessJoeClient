@@ -1,12 +1,20 @@
-<nav>
+<nav class="navbar">
     <ul>
-        <li><a routerLink = "/home" class="menu-item">Home</a></li>
-        <li><a routerLink = "/browse" class="menu-item">Browse</a></li>
-        <li><a routerLink = "/shoe-form" class="menu-item"> Shoe Form</a></li>
-        <li *ngIf="!currentUser"><a routerLink = "/register" class="menu-item right">Register</a></li>
-        <li *ngIf="currentUser?.isAdmin == true"> <a routerLink = "/register" class="menu-item right">Create User</a> </li>
-        <img *ngIf="currentUser" src="../../assets/images/noun_User_961.png" height="50px" alt="User" />
-        <li *ngIf="currentUser" class="menu-item right">Hi {{ this.currentUser.firstName }}</li>
-        <li *ngIf="currentUser"><a class="mneu-item right" (click) ="logout()" > Logout</a></li>
-</ul>
+        <a routerLink="/home" class="menu-item">Home</a>
+        <a routerLink="/browse" class="menu-item">Browse</a>
+        <a routerLink="/shoe-form" class="menu-item"> Shoe Form</a>
+        <a *ngIf="!currentUser" routerLink="/register" class="menu-item right">Register</a>
+        <a *ngIf="currentUser?.isAdmin == true" routerLink="/register" class="menu-item right">Create User</a>
+
+        <div class="dropdown" *ngIf="currentUser">
+            <img *ngIf="currentUser" src="../../assets/images/noun_User_961.png" height="50px" alt="User"
+                class="dropbtn" />
+            <div class="dropdown-content" *ngIf="currentUser">
+                <a routerLink="/user/myShoes"> My shoes </a>
+            </div>
+        </div>
+        
+        <a *ngIf="currentUser" class="menu-item right">Hi {{ this.currentUser.firstName }}</a>
+        <a class="mneu-item right" (click)="logout()" *ngIf="currentUser"> Logout</a>
+    </ul>
 </nav>
