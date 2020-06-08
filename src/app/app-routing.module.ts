@@ -6,9 +6,11 @@ import { ShoeDetailsComponent } from './browse/shoe-details/shoe-details.compone
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './helper/auth.guard';
+import { ShoesFormComponent } from './shoes-form/shoes-form.component';
 
 const routes: Routes = [
   {path: 'browse', component : BrowseComponent, canActivate: [AuthGuard]},
+  {path: 'shoe-form', component: ShoesFormComponent, canActivate: [AuthGuard]},
   {path: 'shoe-details', component: ShoeDetailsComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent },
