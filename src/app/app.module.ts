@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { ErrorInterceptor, JwtInterceptor } from './helper';
+import { ShoesFormComponent } from './shoes-form/shoes-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ErrorInterceptor, JwtInterceptor } from './helper';
     BrowseComponent,
     ShoeDetailsComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
+    ShoesFormComponent
   ],
   imports: [
     BrowserModule,

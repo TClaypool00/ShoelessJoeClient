@@ -4,6 +4,7 @@ import { Users } from "../models/users";
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { UsersService } from "../services/users.service";
+import { AuthenticationService } from '../services';
 // Add Toastr later
 
 @Component({
@@ -16,7 +17,10 @@ export class RegisterComponent implements OnInit {
   loading = false;
   error: string | undefined;
   RegisterForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router: Router, private service: UsersService) { }
+  currentUser: Users;
+  constructor(private formBuilder: FormBuilder, private router: Router, private service: UsersService, private authService: AuthenticationService) {
+    this.authService.currentUser.subscribe(x => this.currentUser = x);
+   }
   
   ngOnInit(): void {
     this.RegisterForm = this.formBuilder.group({
