@@ -3,7 +3,6 @@
         <a routerLink="/home" class="menu-item">Home</a>
         <a routerLink="/browse" class="menu-item">Browse</a>
         <a routerLink="/shoe-form" class="menu-item"> Shoe Form</a>
-        <a *ngIf="!currentUser" routerLink="/register" class="menu-item right">Register</a>
         <a *ngIf="currentUser?.isAdmin == true" routerLink="/register" class="menu-item right">Create User</a>
         <a *ngIf="!currentUser" routerLink="/register"> Login/Register</a>
 

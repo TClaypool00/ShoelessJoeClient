@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { BrowseComponent } from './browse/browse.component';
 import { ShoeDetailsComponent } from './browse/shoe-details/shoe-details.component';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { ErrorInterceptor, JwtInterceptor } from './helper';
 import { ShoesFormComponent } from './shoes-form/shoes-form.component';
@@ -39,6 +39,7 @@ import { EditProfileComponent } from './navbar/edit-profile/edit-profile.compone
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     HttpClient,

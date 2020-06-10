@@ -1,6 +1,6 @@
 <div id="Main-Container">
+    <h2>Browse Page</h2>
     <div *ngIf="shoes.length > 0">
-        <h2>Browse Page</h2>
         <br />
         <div *ngFor="let shoe of shoes;">
             <div class="listOfShoes" (click)="getShoe(this.shoe.shoeId)">
@@ -10,7 +10,9 @@
                 <p><b>Both Shoes:</b>{{this.shoe.bothShoes}}</p>
             </div>
         </div>
-    </div>
 
+        <div *ngIf="shoes.length === 0"> No Shoes avaliable, Sorry come back later </div>
+    </div>
     <div *ngIf="shoes.length === 0"> No Shoes avaliable, Sorry come back later </div>
+    
 </div>
