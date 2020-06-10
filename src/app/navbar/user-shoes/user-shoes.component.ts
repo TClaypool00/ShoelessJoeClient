@@ -47,6 +47,11 @@ export class UserShoesComponent implements OnInit {
       )
   }
 
+  deleteShoe(id:number) {
+    return this.service.removeShoeById(id).subscribe();
+      
+  }
+
   resetError() {
     this.error = undefined;
   }

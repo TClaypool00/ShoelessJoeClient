@@ -1,6 +1,7 @@
 #container.myShoes {
     width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
 }
+
+/* .myButton.delete {
+    background-color: #d9534f;
+} */

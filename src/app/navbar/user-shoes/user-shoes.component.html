@@ -9,9 +9,11 @@
                 <p><b>Both Shoes:</b>{{this.shoe.bothShoes}}</p>
                 <p><b>Model: </b>{{ this.shoe.model }}</p>
             </div>
+            <button class="myButton delete" (click)=deleteShoe(this.shoe.shoeId)>Delete Shoe</button>
+            <button class="myButton edit">Edit Shoe</button>
         </div>
     </div>
 
     <br/>
-    <p *ngIf="shoes.length == 0">You have no shoes. You could go to <a routerLink='/shoe-form'> ShoeForm</a> </p>
+    <p *ngIf="shoes.length === 0">You have no shoes. You could go to <a routerLink='/shoe-form'> ShoeForm</a> </p>
 </div>
