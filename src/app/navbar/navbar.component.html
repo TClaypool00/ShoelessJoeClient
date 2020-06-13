@@ -10,8 +10,9 @@
             <img *ngIf="currentUser" src="../../assets/images/noun_User_961.png" height="50px" alt="User"
                 class="dropbtn" />
             <div class="dropdown-content" *ngIf="currentUser">
-                <a routerLink="/user/myShoes"> My shoes </a>
                 <a routerLink="/user/profile"> Edit Profile </a>
+                <a routerLink="/user/myShoes"> My shoes </a>
+                <a routerLink="user/myComments"> My Comments</a>
             </div>
         </div>
         

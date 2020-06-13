@@ -9,6 +9,7 @@ import { AuthGuard } from './helper/auth.guard';
 import { ShoesFormComponent } from './shoes-form/shoes-form.component';
 import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
 import { EditProfileComponent } from './navbar/edit-profile/edit-profile.component';
+import { UserCommentsComponent } from './navbar/user-comments/user-comments.component';
 
 const routes: Routes = [
   {path: 'browse', component : BrowseComponent, canActivate: [AuthGuard]},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent },
   {path: 'user/myShoes', component: UserShoesComponent, canActivate: [AuthGuard]},
+  {path: 'user/myComments', component: UserCommentsComponent, canActivate: [AuthGuard]},
   {path: 'user/profile', component: EditProfileComponent, canActivate: [AuthGuard]},
   {path: '', component: HomeComponent},
   {path: '**', redirectTo: '' }

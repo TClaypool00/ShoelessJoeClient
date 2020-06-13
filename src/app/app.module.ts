@@ -18,6 +18,7 @@ import { ErrorInterceptor, JwtInterceptor } from './helper';
 import { ShoesFormComponent } from './shoes-form/shoes-form.component';
 import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
 import { EditProfileComponent } from './navbar/edit-profile/edit-profile.component';
+import { UserCommentsComponent } from './navbar/user-comments/user-comments.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditProfileComponent } from './navbar/edit-profile/edit-profile.compone
     AlertComponent,
     ShoesFormComponent,
     UserShoesComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    UserCommentsComponent
   ],
   imports: [
     BrowserModule,
