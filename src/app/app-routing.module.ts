@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'browse', component : BrowseComponent, canActivate: [AuthGuard]},
   {path: 'shoe-form', component: ShoesFormComponent, canActivate: [AuthGuard]},
   {path: 'shoe-details/:id', component: ShoeDetailsComponent},
-  {path: 'addComment/shoeId=:id', component: AddCommentComponent, canActivate: [AuthGuard]},
+  {path: 'addComment/:id', component: AddCommentComponent, canActivate: [AuthGuard]},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent },
   {path: 'user/myShoes', component: UserShoesComponent, canActivate: [AuthGuard]},

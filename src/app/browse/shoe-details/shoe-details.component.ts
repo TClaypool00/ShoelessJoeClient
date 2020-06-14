@@ -30,7 +30,7 @@ export class ShoeDetailsComponent implements OnInit {
       .subscribe (
         shoe => {
           this.currentShoe = shoe;
-          this.router.navigateByUrl('')
+          this.router.navigateByUrl('/addComment/' + id)
         }
       )
   }
