@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, ShoesService } from 'src/app/services';
 import { Users, Shoes } from 'src/app/models';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-shoe-details',
@@ -12,7 +12,7 @@ export class ShoeDetailsComponent implements OnInit {
   currentShoe: Shoes;
   currentuser: Users
 
-  constructor(public service: ShoesService, private authService: AuthenticationService, private route: ActivatedRoute,) { 
+  constructor(public service: ShoesService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router) { 
     this.currentuser = this.authService.currentUserValue;
   }
 
@@ -23,5 +23,15 @@ export class ShoeDetailsComponent implements OnInit {
       .subscribe(shoe => {
         this.currentShoe = shoe;
       });
+  }
+
+  chooseShoe(id:number) {
+    this.service.getShoeById(id)
+      .subscribe (
+        shoe => {
+          this.currentShoe = shoe;
+          this.router.navigateByUrl('')
+        }
+      )
   }
 }
