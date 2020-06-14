@@ -10,46 +10,44 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ShoesService {
-  header:any;
-  constructor(private http:HttpClient, ) {
+  header: any;
+  constructor(private http: HttpClient, ) {
     const headerSettings: { [name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
 
-   }
+  }
 
-   private baseUrl = environment.ApiBaseUrl;
+  private baseUrl = environment.ApiBaseUrl;
 
-   private handleError<T>(operation = 'operation', result?: T)
-  {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(operation + " " + error);
       return of(result as T);
     };
-}
+  }
 
-   getShoes() {
-     return this.http.get<Shoes[]>(`${this.baseUrl}Shoes`)
-     .toPromise()
-   }
+  getShoes() {
+    return this.http.get<Shoes[]>(`${this.baseUrl}Shoes`)
+      .toPromise()
+  }
 
-   getShoeById(id:number) : Observable<Shoes>{
+  getShoeById(id: number): Observable<Shoes> {
     return this.http.get<Shoes>(`${this.baseUrl}Shoes/` + id)
-    .pipe(
-      catchError(this.handleError<Shoes>('getShoeById'))
-    );
-    
-   }
+      .pipe(
+        catchError(this.handleError<Shoes>('getShoeById'))
+      );
+  }
 
-   PostShoe(shoe: Shoes) {
+  PostShoe(shoe: Shoes) {
     return this.http.post<Shoes>(`${this.baseUrl}Shoes`, shoe)
-    .toPromise();
-   }
+      .toPromise();
+  }
 
-   removeShoeById(id:number) {
-     return this.http.delete<Shoes>(`${this.baseUrl}Shoes/` + id)
-   }
+  removeShoeById(id: number) {
+    return this.http.delete<Shoes>(`${this.baseUrl}Shoes/` + id)
+  }
 
-   updateShoeById(id: number, shoe:Shoes) {
-     return this.http.put<Shoes>(`${this.baseUrl}Shoes/` + id, shoe)
-   }
+  updateShoeById(id: number, shoe: Shoes) {
+    return this.http.put<Shoes>(`${this.baseUrl}Shoes/` + id, shoe)
+  }
 }

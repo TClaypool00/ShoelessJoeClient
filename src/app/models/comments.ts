@@ -1,8 +1,8 @@
 export interface Comments {
-    CommentId: number;
-    MessageHead:string;
-    MessageBody:string;
-    CommentDate:Date;
+    commentId?: number;
+    messageHead:string;
+    messageBody:string;
+    commentDate:Date;
 
     userId:number;
     userFistName:string;

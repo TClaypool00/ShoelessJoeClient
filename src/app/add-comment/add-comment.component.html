@@ -1,1 +1,29 @@
-<p>add-comment works!</p>
+<div id="container">
+    <h2>Submit a comment</h2>
+    <form [formGroup]="commentForm" (ngSubmit)="submit()" autocomplete="off">
+        <div class="item">
+            <input type="text" formControlName="messageHead"  placeholder="Message Header">
+            <div *ngIf="submitted && f.messageHead.errors" class="invalid-feedback">
+                <div *ngIf="f.messageHead.errors.required">Message Header is required</div>
+                <div *ngIf="f.messageHead.errors.maxLength">Message header  cannot exceed 255 characters</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <textarea [ngClass]="{ 'is-invalid': submitted && f.MessageBody.errors  }" placeholder="MessageBody"></textarea>
+            <div *ngIf="submitted && f.MessageBody.errors" class="invalid-feedback">
+                <div *ngIf="f.MessageBody.errors.required">Message Body is required</div>
+                <div *ngIf="f.MessageBody.errors.maxLength">Message Body  cannot exceed 255 characters</div>
+            </div>
+        </div>
+
+        <div class="item">
+            <input type="datetime-local" [ngClass]="{ 'is-invalid': submitted && f.commentDate.errors  }">
+            <div *ngIf="submitted && f.commentDate.errors" class="invalid-feedback">
+                <div *ngIf="f.commentDate.errors.required">Message Body is required</div>
+            </div>
+        </div>
+
+        <button class="myButton">Submit</button>
+    </form>
+</div>

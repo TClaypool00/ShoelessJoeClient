@@ -20,6 +20,7 @@ import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
 import { EditProfileComponent } from './navbar/edit-profile/edit-profile.component';
 import { UserCommentsComponent } from './navbar/user-comments/user-comments.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { CommentDetailsComponent } from './comment-details/comment-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     UserShoesComponent,
     EditProfileComponent,
     UserCommentsComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    CommentDetailsComponent,
   ],
   imports: [
     BrowserModule,
