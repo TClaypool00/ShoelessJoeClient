@@ -39,7 +39,7 @@ export class UserShoesComponent implements OnInit {
 
   getShoe(id:number) {
     return this.service.getShoeById(id)
-      .then (
+      .subscribe (
         shoe => {
           this.shoe = shoe;
           this.router.navigateByUrl('/shoe-details/' + id);

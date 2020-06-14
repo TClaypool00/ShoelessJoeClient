@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import  {Shoes } from "../../models/shoes"
-import { ShoesService } from 'src/app/services/shoes.service';
+import { AuthenticationService, ShoesService } from 'src/app/services';
+import { Users, Shoes } from 'src/app/models';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shoe-details',
@@ -8,15 +9,19 @@ import { ShoesService } from 'src/app/services/shoes.service';
   styleUrls: ['./shoe-details.component.css']
 })
 export class ShoeDetailsComponent implements OnInit {
-  shoe: Shoes;
+  currentShoe: Shoes;
+  currentuser: Users
 
-  constructor(public service: ShoesService) { }
-
-  ngOnInit(): void {
+  constructor(public service: ShoesService, private authService: AuthenticationService, private route: ActivatedRoute,) { 
+    this.currentuser = this.authService.currentUserValue;
   }
 
-  reciveId($event) {
-    this.shoe = $event;
-  } 
+  ngOnInit(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
 
+    this.service.getShoeById(id)
+      .subscribe(shoe => {
+        this.currentShoe = shoe;
+      });
+  }
 }

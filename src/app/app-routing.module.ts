@@ -14,7 +14,7 @@ import { UserCommentsComponent } from './navbar/user-comments/user-comments.comp
 const routes: Routes = [
   {path: 'browse', component : BrowseComponent, canActivate: [AuthGuard]},
   {path: 'shoe-form', component: ShoesFormComponent, canActivate: [AuthGuard]},
-  {path: 'shoe-details', component: ShoeDetailsComponent},
+  {path: 'shoe-details/:id', component: ShoeDetailsComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent },
   {path: 'user/myShoes', component: UserShoesComponent, canActivate: [AuthGuard]},
