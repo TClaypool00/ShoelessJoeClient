@@ -9,4 +9,4 @@
 <p>Left Size: {{this.currentShoe?.leftSize}} </p>
 
 <p>Owner's Name: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}} </p> 
-<button class="myButton" (click) = "chooseShoe(this.currentShoe?.shoeId)">Select Shoe</button>
+<button *ngIf="this.currentShoe?.userId != this.currentuser?.userId" class="myButton" (click) = "chooseShoe(this.currentShoe?.shoeId)" >Select Shoe</button>

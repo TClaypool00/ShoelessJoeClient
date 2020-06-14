@@ -13,7 +13,7 @@ export class ShoeDetailsComponent implements OnInit {
   currentuser: Users
 
   constructor(public service: ShoesService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router) { 
-    this.currentuser = this.authService.currentUserValue;
+    this.authService.currentUser.subscribe(x => this.currentuser = x);
   }
 
   ngOnInit(): void {
