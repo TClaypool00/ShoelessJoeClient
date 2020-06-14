@@ -1,8 +1,12 @@
 export interface Reply {
-    ReplyId:number;
-    ReplyBody:string;
-    ReplyDate:Date;
+    replyId:number;
+    replyBody:string;
+    replyDate:Date;
 
-    CommentId:number;
-    ReplyUserId:number
+    commentId:number;
+    commentHead:string;
+
+    replyUserId:number
+    replyUserFirstName:string;
+    replyUserLastName:string;
 }
