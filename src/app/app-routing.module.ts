@@ -10,11 +10,13 @@ import { ShoesFormComponent } from './shoes-form/shoes-form.component';
 import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
 import { EditProfileComponent } from './navbar/edit-profile/edit-profile.component';
 import { UserCommentsComponent } from './navbar/user-comments/user-comments.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
 
 const routes: Routes = [
   {path: 'browse', component : BrowseComponent, canActivate: [AuthGuard]},
   {path: 'shoe-form', component: ShoesFormComponent, canActivate: [AuthGuard]},
   {path: 'shoe-details/:id', component: ShoeDetailsComponent},
+  {path: 'addComment/shoeId=:id', component: AddCommentComponent, canActivate: [AuthGuard]},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent },
   {path: 'user/myShoes', component: UserShoesComponent, canActivate: [AuthGuard]},

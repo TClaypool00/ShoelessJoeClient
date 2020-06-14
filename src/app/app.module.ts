@@ -19,6 +19,7 @@ import { ShoesFormComponent } from './shoes-form/shoes-form.component';
 import { UserShoesComponent } from './navbar/user-shoes/user-shoes.component';
 import { EditProfileComponent } from './navbar/edit-profile/edit-profile.component';
 import { UserCommentsComponent } from './navbar/user-comments/user-comments.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserCommentsComponent } from './navbar/user-comments/user-comments.comp
     ShoesFormComponent,
     UserShoesComponent,
     EditProfileComponent,
-    UserCommentsComponent
+    UserCommentsComponent,
+    AddCommentComponent
   ],
   imports: [
     BrowserModule,
