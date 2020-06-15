@@ -60,7 +60,7 @@ export class AddCommentComponent implements OnInit {
       messageBody: this.commentForm.value.messageBody,
       commentDate: this.commentForm.value.commentDate,
       userId: this.CurrentUser.userId,
-      userFistName: this.CurrentUser.firstName,
+      userFirstName: this.CurrentUser.firstName,
       userLastName: this.CurrentUser.lastName,
       shoeId: this.currentShoe.shoeId,
       shoeManufacter: this.currentShoe.manufacter,

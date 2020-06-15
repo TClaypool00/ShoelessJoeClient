@@ -5,7 +5,7 @@ export interface Comments {
     commentDate:Date;
 
     userId:number;
-    userFistName:string;
+    userFirstName:string;
     userLastName:string;
 
     shoeId:number;

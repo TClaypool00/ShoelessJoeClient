@@ -10,7 +10,7 @@
         </div>
 
         <div class="item">
-            <textarea [ngClass]="{ 'is-invalid': submitted && f.MessageBody.errors  }" placeholder="MessageBody"></textarea>
+            <textarea formControlName="messageBody" [ngClass]="{ 'is-invalid': submitted && f.MessageBody.errors  }" placeholder="MessageBody"></textarea>
             <div *ngIf="submitted && f.MessageBody.errors" class="invalid-feedback">
                 <div *ngIf="f.MessageBody.errors.required">Message Body is required</div>
                 <div *ngIf="f.MessageBody.errors.maxLength">Message Body  cannot exceed 255 characters</div>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="item">
-            <input type="datetime-local" [ngClass]="{ 'is-invalid': submitted && f.commentDate.errors  }">
+            <input type="datetime-local" formControlName="commentDate" [ngClass]="{ 'is-invalid': submitted && f.commentDate.errors  }">
             <div *ngIf="submitted && f.commentDate.errors" class="invalid-feedback">
                 <div *ngIf="f.commentDate.errors.required">Message Body is required</div>
             </div>
