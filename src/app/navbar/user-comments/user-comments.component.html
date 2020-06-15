@@ -1,3 +1,12 @@
 <div id="container">
     <h2>My Comments</h2>
+    <div *ngIf="comments.length > 0">
+        <h3>Potential Buys</h3>
+        <div *ngFor="let comment of comments">
+           <div *ngIf="this.currentUser.userId == this.comment.userId">
+                <p> {{this.comment.commentId}} </p>
+                <button class="myButton" (click)= getComment(this.comment.commentId)>Select Comment</button>
+           </div>
+        </div>
+    </div>
 </div>

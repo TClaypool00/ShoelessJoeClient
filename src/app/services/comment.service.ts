@@ -12,7 +12,7 @@ export class CommentService {
   private baseUrl = environment.ApiBaseUrl;
 
   getComments() {
-    return this.http.get<Comments[]>(`${this.baseUrl}/Comments`)
+    return this.http.get<Comments[]>(`${this.baseUrl}Comments`)
       .toPromise();
   }
 
