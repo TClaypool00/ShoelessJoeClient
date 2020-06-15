@@ -94,3 +94,7 @@ div.invalid-feedback {
   font-size: small;
   color: red;
 }
+
+.myButton.register {
+  margin-top: 13%;
+}
