@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommentService, AuthenticationService } from 'src/app/services';
 import { Users, Comments } from 'src/app/models';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-comments',
@@ -15,7 +16,7 @@ export class UserCommentsComponent implements OnInit {
   error: string | undefined;
   errorMessage: string;
 
-  constructor(private service: CommentService, private authService: AuthenticationService) { 
+  constructor(private service: CommentService, private authService: AuthenticationService, private router: Router) { 
     this.authService.currentUser.subscribe(x => this.currentUser = x);
   }
 
@@ -41,6 +42,7 @@ export class UserCommentsComponent implements OnInit {
       .then (
         comment => {
           this.comment = comment;
+          this.router.navigateByUrl('/comments-details/' + id);
         }
       )
   }
