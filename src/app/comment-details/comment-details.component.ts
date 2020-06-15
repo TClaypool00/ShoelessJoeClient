@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Users, Comments } from '../models';
 import { AuthenticationService, CommentService } from '../services';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DateService } from '../services/date.service';
 
 @Component({
   selector: 'app-comment-details',
@@ -11,8 +12,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CommentDetailsComponent implements OnInit {
   currentUser: Users;
   currentComment: Comments;
+  // now = this.dateService.currentDateTime();
 
-  constructor(private service: CommentService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router) {
+  constructor(private service: CommentService, private authService: AuthenticationService, private dateService: DateService, private route: ActivatedRoute, private router: Router) {
     this.authService.currentUser.subscribe(x => this.currentUser = x);
    }
 
@@ -23,6 +25,8 @@ export class CommentDetailsComponent implements OnInit {
       .then(comment => {
         this.currentComment = comment;
       })
+    
+    this.dateService.currentDateTime();
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoesService, CommentService, AuthenticationService } from '../services';
+import { ShoesService, CommentService, AuthenticationService, DateService } from '../services';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Shoes, Users, Comments } from '../models';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -19,7 +19,8 @@ export class AddCommentComponent implements OnInit {
   commentForm: FormGroup;
 
 
-  constructor(private service: CommentService ,public shoeService: ShoesService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router,  private formBuilder:FormBuilder) { 
+  constructor(private service: CommentService ,public shoeService: ShoesService, private authService: AuthenticationService, private route: ActivatedRoute,
+    private router: Router,  private formBuilder:FormBuilder, private dateService: DateService) { 
     this.authService.currentUser.subscribe(x => this.CurrentUser = x);
   }
 
