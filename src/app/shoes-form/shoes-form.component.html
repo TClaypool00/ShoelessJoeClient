@@ -42,6 +42,15 @@
 
         <input type="checkbox" formControlName="isSold" hidden>
 
+        <input type="checkbox" formControlName="gender" hidden>
+
+        <div class="item">
+            <textarea  formControlName=description [ngClass]="{ 'is-invalid': submitted && f.description.errors  }" placeholder="Description"></textarea>
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required"> Description is required</div>
+            </div>
+        </div>
+
         <button type="submit" class="myButton">Submit</button>
     </form>
 </div>

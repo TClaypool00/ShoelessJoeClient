@@ -28,6 +28,8 @@ export class ShoesFormComponent implements OnInit {
       model: ['', Validators.required],
       color: ['', Validators.required],
       isSold: [false, Validators.required],
+      description: ['', Validators.required],
+      gender: [false, Validators.required],
       rightSize: [''],
       leftSize: ['']
     });
@@ -56,6 +58,8 @@ export class ShoesFormComponent implements OnInit {
       model: this.shoeForm.value.model,
       color: this.shoeForm.value.color,
       isSold: this.shoeForm.value.isSold,
+      gender: this.shoeForm.value.gender,
+      description: this.shoeForm.value.description,
       rightSize: this.shoeForm.value.rightSize,
       leftSize: this.shoeForm.value.leftSize,
       userId: this.currentUser.userId,
