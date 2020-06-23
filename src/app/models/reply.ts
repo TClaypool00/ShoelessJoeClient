@@ -1,5 +1,5 @@
 export interface Reply {
-    replyId:number;
+    replyId?:number;
     replyBody:string;
     replyDate:Date;
 
