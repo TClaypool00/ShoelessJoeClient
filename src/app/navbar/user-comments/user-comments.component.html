@@ -3,10 +3,20 @@
     <div *ngIf="comments.length > 0">
         <h3>Potential Buys</h3>
         <div *ngFor="let comment of comments">
-           <div *ngIf="this.currentUser.userId == this.comment.userId">
+            <div *ngIf="this.currentUser.userId == this.comment.userId">
                 <p> {{this.comment.commentId}} </p>
-                <button class="myButton" (click)= getComment(this.comment.commentId)>Select Comment</button>
-           </div>
+                <button class="myButton" (click)=getComment(this.comment.commentId)>Select Comment</button>
+            </div>
         </div>
     </div>
-</div>
+    <br />
+
+    <div *ngIf="comments.length > 0">
+        <h3>Potential Sells</h3>
+        <div *ngFor="let comment of comments">
+            <div *ngIf="this.currentUser.userId == this.comment.shoeUserId">
+                <p> {{this.comment.commentId}} </p>
+                <button class="myButton" (click)=getComment(this.comment.commentId)>Select Comment</button>
+            </div>
+        </div>
+    </div>
