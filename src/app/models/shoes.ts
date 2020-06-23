@@ -6,7 +6,9 @@ export interface Shoes {
     color: string;
     rightSize?: number;
     leftSize?: number;
+    description:string;
     isSold: boolean;
+    gender:boolean;
 
     userId: number;
     userFirstName: string;
