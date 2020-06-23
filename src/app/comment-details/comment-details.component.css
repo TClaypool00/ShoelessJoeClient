@@ -1,0 +1,7 @@
+.myButton.approve {
+    background: green;
+}
+
+.myButton.deny {
+    background: red;
+}

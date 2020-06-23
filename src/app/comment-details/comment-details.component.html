@@ -17,8 +17,13 @@
         {{this.reply.replyLastName}}
     </div>
 </div>
-    <div id="container">
-        <p>Reply</p>
-        <textarea id="bodyHTML"></textarea>
-        <button class="myButton" (click)="createReply()">Reply</button>
-    </div>
+<div id="container">
+    <p>Reply</p>
+    <textarea id="bodyHTML"></textarea>
+    <button class="myButton" (click)="createReply()">Reply</button>
+</div>
+
+<div *ngIf="currentUser?.userId == currentComment?.shoeUserId">
+    <button class="myButton approve">Approve</button>
+    <button class="myButton deny">Deny</button>
+</div>
