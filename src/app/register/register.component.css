@@ -97,4 +97,7 @@ div.invalid-feedback {
 
 .myButton.register {
   margin-top: 13%;
+  height: initial;
+  width: initial;
+  position: initial;
 }
