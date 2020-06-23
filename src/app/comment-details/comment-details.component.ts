@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Users, Comments } from '../models';
-import { AuthenticationService, CommentService } from '../services';
+import { Users, Comments, Reply } from '../models';
+import { AuthenticationService, CommentService, DateService, ReplyService } from '../services';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DateService } from '../services/date.service';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-comment-details',
@@ -12,9 +12,12 @@ import { DateService } from '../services/date.service';
 export class CommentDetailsComponent implements OnInit {
   currentUser: Users;
   currentComment: Comments;
-  // now = this.dateService.currentDateTime();
+  replyForm: FormGroup;
+  replies:Reply[] = [];
+  reply:Reply;
+  date = new Date((new Date().getDate()))
 
-  constructor(private service: CommentService, private authService: AuthenticationService, private dateService: DateService, private route: ActivatedRoute, private router: Router) {
+  constructor(private service: CommentService, private authService: AuthenticationService, private dateService: DateService, private route: ActivatedRoute, private router: Router, private formBuilder:FormBuilder, private replYService: ReplyService) {
     this.authService.currentUser.subscribe(x => this.currentUser = x);
    }
 
@@ -24,9 +27,31 @@ export class CommentDetailsComponent implements OnInit {
     this.service.getCommentById(id)
       .then(comment => {
         this.currentComment = comment;
-      })
-    
-    this.dateService.currentDateTime();
+      });
+
+    this.getReplies()
   }
 
+  createReply() {
+    var body = ((document.getElementById("bodyHTML") as HTMLInputElement).value)
+    
+    const newReply:Reply  = {
+      replyBody: body,
+      replyDate: this.date,
+      commentId: this.currentComment.commentId,
+      commentHead: this.currentComment.messageHead,
+      replyUserId: this.currentUser.userId,
+      replyUserFirstName: this.currentUser.firstName,
+      replyUserLastName: this.currentUser.lastName
+    }
+
+    this.replYService.postReply(newReply);
+  }
+
+  getReplies() {
+    return this.replYService.getReplies()
+      .then(replies => {
+        this.replies = replies;
+      })
+  }
 }

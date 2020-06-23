@@ -1,9 +1,24 @@
+<h2>Comment Details</h2>
 <p>Potential Buyer: {{this.currentComment?.userFirstName}} {{this.currentComment?.userLastName}} </p>
 <p>Shoe Owner: {{this.currentComment?.shoeFirstName}} {{this.currentComment?.shoeLastName}} </p>
 <br>
-<p> {{this.currentComment?.messageHead}} </p>
-<p> {{this.currentComment?.messageBody}} </p>
-<p> {{this.currentComment?.commentDate}} </p>
+<div id="container">
+    <p> Comment Head: {{this.currentComment?.messageHead}} </p>
+    <p> Comment Body: {{this.currentComment?.messageBody}} </p>
+    <p> Date: {{this.currentComment?.commentDate}} </p>
+    <br>
+</div>
 
-<!-- <p> {{this.now}} </p> -->
-<button class="myButton">Reply</button>
+<div *ngFor="let reply of replies;">
+    <div *ngIf="this.currentComment?.commentId == this.reply.commentId">
+        {{this.reply.replyDate}}
+        {{this.reply.replyBody}}
+        {{this.reply.replyFirstName}}
+        {{this.reply.replyLastName}}
+    </div>
+</div>
+    <div id="container">
+        <p>Reply</p>
+        <textarea id="bodyHTML"></textarea>
+        <button class="myButton" (click)="createReply()">Reply</button>
+    </div>
