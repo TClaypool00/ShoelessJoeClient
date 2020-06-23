@@ -17,6 +17,7 @@ export class AddCommentComponent implements OnInit {
   submitted = false;
   error: string | undefined;
   commentForm: FormGroup;
+  date = new Date((new Date().getDate()))
 
 
   constructor(private service: CommentService ,public shoeService: ShoesService, private authService: AuthenticationService, private route: ActivatedRoute,
@@ -28,7 +29,6 @@ export class AddCommentComponent implements OnInit {
     this.commentForm = this.formBuilder.group ({
       messageHead: ['', Validators.required],
       messageBody: ['', Validators.required],
-      commentDate: ['', Validators.required]
     });
 
     const id = +this.route.snapshot.paramMap.get('id');
@@ -59,7 +59,7 @@ export class AddCommentComponent implements OnInit {
     const newComment: Comments = {
       messageHead: this.commentForm.value.messageHead,
       messageBody: this.commentForm.value.messageBody,
-      commentDate: this.commentForm.value.commentDate,
+      commentDate: this.date,
       userId: this.CurrentUser.userId,
       userFirstName: this.CurrentUser.firstName,
       userLastName: this.CurrentUser.lastName,
