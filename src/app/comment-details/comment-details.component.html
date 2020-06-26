@@ -25,5 +25,5 @@
 
 <div *ngIf="currentUser?.userId == currentComment?.shoeUserId">
     <button class="myButton approve">Approve</button>
-    <button class="myButton deny">Deny</button>
+    <button class="myButton deny" (click)="decline()">Deny</button>
 </div>

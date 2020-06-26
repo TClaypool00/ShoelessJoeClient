@@ -17,7 +17,8 @@ export class CommentDetailsComponent implements OnInit {
   reply:Reply;
   date = new Date((new Date().getDate()))
 
-  constructor(private service: CommentService, private authService: AuthenticationService, private dateService: DateService, private route: ActivatedRoute, private router: Router, private formBuilder:FormBuilder, private replYService: ReplyService) {
+  constructor(private service: CommentService, private authService: AuthenticationService, private dateService: DateService, private route: ActivatedRoute,
+    private router: Router, private formBuilder:FormBuilder, private replYService: ReplyService) {
     this.authService.currentUser.subscribe(x => this.currentUser = x);
    }
 
@@ -53,5 +54,14 @@ export class CommentDetailsComponent implements OnInit {
       .then(replies => {
         this.replies = replies;
       })
+  }
+
+  decline() {
+    return this.service.deleteComment(this.currentComment.commentId)
+    .then(comment => {
+      this.currentComment = comment;
+      this.router.navigateByUrl('/browse');
+    })
+
   }
 }
