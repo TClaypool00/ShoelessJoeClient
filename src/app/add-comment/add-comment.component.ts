@@ -64,13 +64,7 @@ export class AddCommentComponent implements OnInit {
       userFirstName: this.CurrentUser.firstName,
       userLastName: this.CurrentUser.lastName,
       shoeId: this.currentShoe.shoeId,
-      shoeManufacter: this.currentShoe.manufacter,
-      shoeModel: this.currentShoe.model,
-      rightSize: this.currentShoe.rightSize,
-      leftSize: this.currentShoe.leftSize,
       shoeUserId: this.currentShoe.userId,
-      shoeFirstName: this.currentShoe.userFirstName,
-      shoeLastName: this.currentShoe.userLastName
     };
 
     this.service.postComment(newComment)
