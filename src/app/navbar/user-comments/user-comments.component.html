@@ -1,7 +1,7 @@
 <div id="container">
     <h2>My Comments</h2>
+    <h3>Potential Buys</h3>
     <div *ngIf="comments.length > 0">
-        <h3>Potential Buys</h3>
         <div *ngFor="let comment of comments">
             <div *ngIf="this.currentUser.userId == this.comment.userId">
                 <p> {{this.comment.commentId}} </p>
@@ -9,10 +9,11 @@
             </div>
         </div>
     </div>
+    <div *ngIf="comments.length == 0"> You have no potential buys. Consider going to the <b><a routerLink='/browse'> Browse </a></b> Page</div>
     <br />
 
+    <h3>Potential Sells</h3>
     <div *ngIf="comments.length > 0">
-        <h3>Potential Sells</h3>
         <div *ngFor="let comment of comments">
             <div *ngIf="this.currentUser.userId == this.comment.shoeUserId">
                 <p> {{this.comment.commentId}} </p>
@@ -20,3 +21,4 @@
             </div>
         </div>
     </div>
+    <div *ngIf="comments.length == 0"> You have no potential sells.</div>
