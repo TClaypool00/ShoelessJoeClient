@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Users } from "../models/users";
 import { environment } from "../../environments/environment";
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +23,12 @@ export class UsersService {
       .toPromise();
    }
 
-   getUserById(id:number) {
-    return this.http.get<Users[]>(`${this.baseUrl}Users/` + id)
-    .toPromise()
+   getUserById(id:number): Observable<Users>
+   {
+    return this.http.get<Users>(`${this.baseUrl}Users/` + id)
+    .pipe(
+      catchError(this.handleError<Users>(`getUserById`))
+    );
    }
 
    postUser(user: Users) {
@@ -40,4 +45,12 @@ export class UsersService {
      return this.http.put(`${this.baseUrl}Users/` + id, user)
      .toPromise();
    }
+
+   private handleError<T>(operation = 'operation', result?: T)
+  {
+    return (error: any): Observable<T> => {
+      console.error(operation + " " + error);
+      return of(result as T);
+    };
+}
 }

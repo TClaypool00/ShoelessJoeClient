@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Users, Comments, Reply } from '../models';
-import { AuthenticationService, CommentService, DateService, ReplyService } from '../services';
+import { Users, Comments, Reply, Shoes } from '../models';
+import { AuthenticationService, CommentService,ReplyService, ShoesService } from '../services';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-comment-details',
@@ -12,15 +12,16 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 export class CommentDetailsComponent implements OnInit {
   currentUser: Users;
   currentComment: Comments;
+  currentShoe: Shoes;
   replyForm: FormGroup;
-  replies:Reply[] = [];
-  reply:Reply;
-  date = new Date((new Date().getDate()))
+  replies: Reply[] = [];
+  reply: Reply;
+  date = new Date((new Date().getUTCDate()))
 
-  constructor(private service: CommentService, private authService: AuthenticationService, private dateService: DateService, private route: ActivatedRoute,
-    private router: Router, private formBuilder:FormBuilder, private replYService: ReplyService) {
+  constructor(private service: CommentService, private authService: AuthenticationService, private route: ActivatedRoute, private router: Router,
+    private replYService: ReplyService, private shoeService: ShoesService) {
     this.authService.currentUser.subscribe(x => this.currentUser = x);
-   }
+  }
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
@@ -28,6 +29,10 @@ export class CommentDetailsComponent implements OnInit {
     this.service.getCommentById(id)
       .then(comment => {
         this.currentComment = comment;
+        this.shoeService.getShoeById(comment.shoeId)
+          .subscribe(shoe => {
+            this.currentShoe = shoe;
+          })
       });
 
     this.getReplies()
@@ -35,8 +40,8 @@ export class CommentDetailsComponent implements OnInit {
 
   createReply() {
     var body = ((document.getElementById("bodyHTML") as HTMLInputElement).value)
-    
-    const newReply:Reply  = {
+
+    const newReply: Reply = {
       replyBody: body,
       replyDate: this.date,
       commentId: this.currentComment.commentId,
@@ -49,19 +54,15 @@ export class CommentDetailsComponent implements OnInit {
     this.replYService.postReply(newReply);
   }
 
-  getReplies() {
-    return this.replYService.getReplies()
-      .then(replies => {
-        this.replies = replies;
-      })
+  async getReplies() {
+    const replies = await this.replYService.getReplies();
+    this.replies = replies;
   }
 
-  decline() {
-    return this.service.deleteComment(this.currentComment.commentId)
-    .then(comment => {
-      this.currentComment = comment;
-      this.router.navigateByUrl('/browse');
-    })
+  async decline() {
+    const comment = await this.service.deleteComment(this.currentComment.commentId);
+    this.currentComment = comment;
+    this.router.navigateByUrl('/browse');
 
   }
 }
