@@ -49,6 +49,10 @@ textarea:focus {
 
 textarea {
   height: 15em;
+  border: 1px solid #AAA;
+}
+
+textarea:focus {
   border: 2px solid #16a085;
 }
 
