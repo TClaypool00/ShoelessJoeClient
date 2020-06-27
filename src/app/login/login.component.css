@@ -1,7 +1,8 @@
-#container.login form {
-    padding: 0 25%;
+#container.login p {
+    margin-top: 20%;
+    text-align: center;
 }
 
-#container.login input {
-    width: 100%;
+#container.login .myButton {
+    margin-top: 25%;
 }

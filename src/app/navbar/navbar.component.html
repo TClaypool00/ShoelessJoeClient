@@ -1,10 +1,13 @@
 <nav class="navbar">
     <ul>
-        <a routerLink="/home" class="menu-item">Home</a>
-        <a routerLink="/browse" class="menu-item">Browse</a>
-        <a routerLink="/shoe-form" class="menu-item"> Shoe Form</a>
-        <a *ngIf="currentUser?.isAdmin == true" routerLink="/register" class="menu-item right">Create User</a>
-        <a *ngIf="!currentUser" routerLink="/register"> Login/Register</a>
+        <a class="active"> ShoelessJoe</a>
+        <div id="links">
+            <a routerLink="/home" class="menu-item">Home</a>
+            <a routerLink="/browse" class="menu-item">Browse</a>
+            <a routerLink="/shoe-form" class="menu-item"> Shoe Form</a>
+            <a *ngIf="currentUser?.isAdmin == true" routerLink="/register" class="menu-item right">Create User</a>
+            <a *ngIf="!currentUser" routerLink="/register"> Login/Register</a>
+        </div>
 
         <div class="dropdown" *ngIf="currentUser">
             <img *ngIf="currentUser" src="../../assets/images/noun_User_961.png" height="50px" alt="User"
@@ -15,7 +18,7 @@
                 <a routerLink="user/myComments"> My Comments</a>
             </div>
         </div>
-        
+
         <a *ngIf="currentUser" class="menu-item right">Hi {{ this.currentUser.firstName }}</a>
         <a class="mneu-item right" (click)="logout()" *ngIf="currentUser"> Logout</a>
     </ul>

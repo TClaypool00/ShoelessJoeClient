@@ -81,6 +81,9 @@
         <button class="myButton register">Register</button>
         </form>
     </div>
+
+    <div id="or" *ngIf="!currentUser">OR</div>
+
     <div class="login" *ngIf="!currentUser">
         <h2>Sign in with Soical Network</h2>
         <button class="social-signin facebook"> Login in with Facebook </button>
@@ -88,5 +91,4 @@
         <button class="social-signin google"> Log in with Google+ </button>
         <button class="social-signin email" routerLink = "/login">Log in with Email</button>
     </div>
-    <div id="or" *ngIf="!currentUser">OR</div>
 </div>
