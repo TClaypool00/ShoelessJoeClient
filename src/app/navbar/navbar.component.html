@@ -10,16 +10,18 @@
         </div>
 
         <div class="dropdown" *ngIf="currentUser">
-            <img *ngIf="currentUser" src="../../assets/images/noun_User_961.png" height="50px" alt="User"
-                class="dropbtn" />
-            <div class="dropdown-content" *ngIf="currentUser">
+            <div class="userPic">
+                <img *ngIf="currentUser" src="../../assets/images/noun_User_961.png" height="50px" alt="User"
+                    class="dropbtn" />
                 <a routerLink="/user/profile"> Edit Profile </a>
+            </div>
+            <div class="dropdown-content" *ngIf="currentUser">
+                <a *ngIf="currentUser" id="user-name">Hi {{ this.currentUser.firstName }}</a>
                 <a routerLink="/user/myShoes"> My shoes </a>
                 <a routerLink="user/myComments"> My Comments</a>
             </div>
         </div>
 
-        <a *ngIf="currentUser" class="menu-item right">Hi {{ this.currentUser.firstName }}</a>
-        <a class="mneu-item right" (click)="logout()" *ngIf="currentUser"> Logout</a>
+        <a id="logout" (click)="logout()" *ngIf="currentUser"> Logout</a>
     </ul>
 </nav>
