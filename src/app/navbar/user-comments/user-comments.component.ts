@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
 })
 export class UserCommentsComponent implements OnInit {
   currentUser: Users;
+
   comment: Comments;
   sellComment: Comments;
+  
   buyComments: Comments[] = [];
   sellComments: Comments[] = [];
-  currentShoe: Shoes;
+
+  sellShoe: Shoes[] = [];
 
   error: string | undefined;
   errorMessage: string;
@@ -54,10 +57,6 @@ export class UserCommentsComponent implements OnInit {
       .then(
         comment => {
           this.comment = comment;
-          this.shoeService.getShoeById(comment.shoeId)
-            .subscribe(shoe => {
-              this.currentShoe = shoe;
-            })
           this.router.navigateByUrl('/comments-details/' + id);
         }
       )

@@ -5,7 +5,7 @@
         <div *ngFor="let comment of buyComments">
             <div *ngIf="this.currentUser.userId == this.comment.userId" class="buyComments">
                 <h3> {{this.comment.messageHead}} </h3>
-                <p>Shoe Owner: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}} </p>
+                <!-- <p>Shoe Owner: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}} </p> -->
                 {{this.comment.shoeId}}
 
                 <button class="myButton" (click)=getComment(this.comment.commentId)>Select Comment</button>
