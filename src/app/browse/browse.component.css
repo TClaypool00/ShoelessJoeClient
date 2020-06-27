@@ -1,7 +1,6 @@
 .listOfShoes {
-    float: left;
-    margin: 2%;
-    padding: 3%;
+	margin: 2%;
+	padding: 3%;
 	text-align: left;
 	background-color: #EAEBED;
 	margin-bottom: 10%;
@@ -9,7 +8,11 @@
 	box-shadow: 10px 5px;
 }
 
-	.listOfShoes:hover {
-	background-color: #006989;
+.listOfShoes:hover {
+	background-color: #16a085;
 	cursor: pointer;
+}
+
+.listOfShoes p {
+	margin: initial;
 }
