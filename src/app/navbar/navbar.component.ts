@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { first } from "rxjs/operators";
 import { Users } from "../models/users";
 import { AuthenticationService } from '../services';
@@ -24,4 +24,20 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  toogle() {
+    var menu = document.getElementById("links");
+    if(menu.style.display == "block")
+      menu.style.display = "none";
+    else
+      menu.style.display = "block"
+  }
+
+  toggleUser() {
+    var links = document.getElementById("user-links");
+    if(links.style.display == "block")
+      links.style.display = "none";
+    else {
+      links.style.display = "block"
+    }
+  }
 }

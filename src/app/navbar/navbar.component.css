@@ -4,7 +4,6 @@
     position: relative;
     padding: 4px;
     margin: -8px;
-    text-align: center;
 }
 
 .navbar a {
@@ -16,6 +15,7 @@
     display: block;
     width: 100%;
     border-bottom: 5px white solid;
+    padding-left: 1em;
 }
 
 .navbar ul {
@@ -23,21 +23,21 @@
     margin: 0;
 }
 
-.userPic {
-    margin-bottom: 5%;
-    border-bottom: initial;
-    margin-left: 0;
-
+#ham, #user-icon {
+    cursor: pointer;
 }
 
-.userPic img {
-    float: left;
+#ham {
+    height: 40px;
+    margin-left: 50%;
 }
 
-.userPic a {
-    float: right;
-    margin-right: 0;
-    margin-bottom: 3%;
+#user-icon {
+    height: 40px;
+}
+
+#links, #user-links {
+    display: none;
 }
 
 ul #logout {
