@@ -1,0 +1,15 @@
+#warning, .linkGit {
+    text-indent: initial;
+}
+
+#backend {
+    margin-bottom: 1%;
+}
+
+li, #client {
+    margin-bottom: 5%;
+}
+
+img {
+    width: 100%;
+}
