@@ -12,10 +12,12 @@ import { EditProfileComponent } from './navbar/edit-profile/edit-profile.compone
 import { UserCommentsComponent } from './navbar/user-comments/user-comments.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { CommentDetailsComponent } from './comment-details/comment-details.component';
+import { TechPageComponent } from './tech-page/tech-page.component';
 
 const routes: Routes = [
   {path: 'browse', component : BrowseComponent, canActivate: [AuthGuard]},
   {path: 'shoe-form', component: ShoesFormComponent, canActivate: [AuthGuard]},
+  {path: 'tech-page', component: TechPageComponent},
   {path: 'shoe-details/:id', component: ShoeDetailsComponent},
   {path: 'addComment/:id', component: AddCommentComponent, canActivate: [AuthGuard]},
   {path: 'comments-details/:id', component: CommentDetailsComponent, canActivate: [AuthGuard]},

@@ -21,6 +21,7 @@ import { EditProfileComponent } from './navbar/edit-profile/edit-profile.compone
 import { UserCommentsComponent } from './navbar/user-comments/user-comments.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { CommentDetailsComponent } from './comment-details/comment-details.component';
+import { TechPageComponent } from './tech-page/tech-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CommentDetailsComponent } from './comment-details/comment-details.compo
     UserCommentsComponent,
     AddCommentComponent,
     CommentDetailsComponent,
+    TechPageComponent,
   ],
   imports: [
     BrowserModule,
