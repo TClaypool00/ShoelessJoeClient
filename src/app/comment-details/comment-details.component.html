@@ -1,27 +1,28 @@
 <h2>Comment Details</h2>
-<p>Potential Buyer: {{this.currentComment?.userFirstName}} {{this.currentComment?.userLastName}} </p>
-<p>Shoe Owner: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}} </p>
-<br>
-<div id="container">
-    <p> Comment Head: {{this.currentComment?.messageHead}} </p>
-    <p> Comment Body: {{this.currentComment?.messageBody}} </p>
-    <p> Date: {{this.currentComment?.commentDate}} </p>
-    <br>
+<div id="buyerSeller">
+    <p>Potential Buyer: {{this.currentComment?.userFirstName}} {{this.currentComment?.userLastName}} </p>
+    <p>Shoe Owner: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}} </p>
+</div>
+
+<div id="commentInfo">
+    <p id="header">{{this.currentComment?.messageHead}} </p>
+    <p> {{this.currentComment?.messageBody}} </p>
+    <p> <b>Date:</b> {{this.currentComment?.commentDate}} </p>
 </div>
 
 <div *ngFor="let reply of replies;">
-    <div *ngIf="this.currentComment?.commentId == this.reply.commentId">
-        {{this.reply.replyDate}}
-        {{this.reply.replyBody}}
-        {{this.reply.replyFirstName}}
-        {{this.reply.replyLastName}}
+    <div *ngIf="this.currentComment?.commentId == this.reply.commentId" [ngClass]="{ 
+        'owner': reply?.replyUserId == currentComment?.userId,
+        'buyer': reply?.replyUserId == currentComment?.shoeUserId 
+     }">
+        <p id="replyText">{{this.reply.replyBody}}</p>
+        <p> Date: {{this.reply.replyDate}} {{this.reply.replyFirstName}} {{this.reply.replyLastName}} </p>
     </div>
 </div>
-<div id="container">
-    <p>Reply</p>
-    <textarea id="bodyHTML"></textarea>
-    <button class="myButton" (click)="createReply()">Reply</button>
-</div>
+
+<p id="replyHeader">Reply:</p>
+<textarea id="bodyHTML"></textarea>
+<button class="myButton" id="replyButton" (click)="createReply()">Reply</button>
 
 <div *ngIf="currentUser?.userId == currentComment?.shoeUserId">
     <button class="myButton approve">Approve</button>
