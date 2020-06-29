@@ -8,7 +8,7 @@
             <a routerLink="/shoe-form" class="menu-item"> Shoe Form</a>
             <a routerLink="/tech-page" class="menu-item"> Technical Page </a>
             <a *ngIf="currentUser?.isAdmin == true" routerLink="/register" class="menu-item right">Create User</a>
-            <a *ngIf="!currentUser" routerLink="/register"> Login/Register</a>
+            <a *ngIf="!currentUser" routerLink="/register" id="login"> Login/Register</a>
         </div>
 
         <div class="dropdown" *ngIf="currentUser">

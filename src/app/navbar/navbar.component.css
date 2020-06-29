@@ -40,8 +40,8 @@
     display: none;
 }
 
-ul #logout {
-    border-bottom: initial;
+ul #logout, #login {
+    border-bottom: none;
 }
 
 a.active {
