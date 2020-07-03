@@ -16,3 +16,7 @@
 .listOfShoes p {
 	margin: initial;
 }
+
+.shoeImg {
+	width: 100%;
+}
