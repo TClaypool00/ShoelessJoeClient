@@ -11,8 +11,8 @@ export class CommentService {
 
   private baseUrl = environment.ApiBaseUrl;
 
-  getComments() {
-    return this.http.get<Comments[]>(`${this.baseUrl}Comments`)
+  getComments(search: string) {
+    return this.http.get<Comments[]>(`${this.baseUrl}Comments?search=${search}`)
       .toPromise();
   }
 

@@ -29,37 +29,29 @@ export class UserCommentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCommentsByCurrentUser();
-    this.getSellCommentsByUser();
+    // this.getSellCommentsByUser();
   }
 
-  getCommentsByCurrentUser() {
-    return this.service.getComments()
-      .then(
-        comments => {
-          this.buyComments = comments;
-          this.resetError();
-        },
-        error => {
-          this.handleError(error);
-        }
-      )
+  async getCommentsByCurrentUser() {
+    try {
+      const comments = await this.service.getComments(this.currentUser.userId.toString());
+      this.buyComments = comments;
+      this.resetError();
+    }
+    catch (error) {
+      this.handleError(error);
+    }
   }
 
-  getSellCommentsByUser() {
-    return this.service.getComments()
-      .then(sell => {
-        this.sellComments = sell;
-      });
-  }
+  // async getSellCommentsByUser() {
+  //   const sell = await this.service.getComments(this.sellComment.userId.toString());
+  //   this.sellComments = sell;
+  // }
 
-  getComment(id: number) {
-    return this.service.getCommentById(id)
-      .then(
-        comment => {
-          this.comment = comment;
-          this.router.navigateByUrl('/comments-details/' + id);
-        }
-      )
+  async getComment(id: number) {
+    const comment = await this.service.getCommentById(id);
+    this.comment = comment;
+    this.router.navigateByUrl('/comments-details/' + id);
   }
 
   resetError() {
