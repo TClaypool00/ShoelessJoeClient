@@ -10,7 +10,6 @@ body {
   font-size: 1.2em;
   margin: 0;
   padding: 0;
-
   color: #222;
   font-family: 'Roboto', sans-serif;
 }
@@ -37,11 +36,11 @@ textarea {
   height: 2em;
   border: none;
   border-bottom: 1px solid #AAA;
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 75%;
   transition: 0.2s ease;
-  background-color: #ffffff;
+  background-color: inherit;
+  font-family: inherit;
 }
 
 input[type="text"]:focus,
@@ -109,7 +108,7 @@ a {
 /* Tablet CSS */
 @media only screen and (min-width: 430px) {
   body {
-    background-color: black;
+    font-size: 1.7em;
   }
 
   #container {
@@ -120,8 +119,21 @@ a {
     margin-top: -2.5%;
   }
 
+  .myButton {
+    font-size: inherit;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  textarea {
+    margin-bottom: 5em;
+  }
+
   p {
     text-indent: 13%;
     margin-bottom: 10%;
+    line-height: 2em;
+    margin-bottom: 4em;
   }
 }

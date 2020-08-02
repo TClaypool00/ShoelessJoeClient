@@ -67,4 +67,11 @@ button.social-signin.email {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     line-height: 2em;
     text-align: center;
-} 
+}
+
+@media only screen and (min-width: 430px) {
+    button.social-signin {
+        margin-bottom: 4em;
+        font-size: inherit;
+    }
+}

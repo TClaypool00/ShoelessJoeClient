@@ -4,6 +4,8 @@
     position: relative;
     padding: 4px;
     margin: -8px;
+    display: block;
+    width: auto;
 }
 
 .navbar a {
@@ -28,8 +30,8 @@
 }
 
 #ham {
-    height: 40px;
-    margin-left: 50%;
+    height: 2.2em;
+    margin-left: 40%;
 }
 
 #user-icon {
@@ -47,4 +49,10 @@ ul #logout, #login {
 a.active {
     background-color: #4CAF50;
     border-bottom: initial;
+}
+
+@media only screen and (min-width: 430px) {
+    #ham {
+        margin-left: 60%;
+    }
 }
