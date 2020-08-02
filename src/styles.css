@@ -7,133 +7,28 @@ Moblie First */
 }
 
 body {
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin: 0;
   padding: 0;
-  color: #222;
   font-family: 'Roboto', sans-serif;
 }
 
 #container {
-  margin: 8%;
-  padding: 1em;
-  background-color: #ffffff;
+    width: 80%;
+    display: block;
+    margin: 0 auto
 }
 
 h2 {
-  text-align: center;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="number"],
-textarea {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 15%;
-  padding: 1%;
-  width: 100%;
-  height: 2em;
-  border: none;
-  border-bottom: 1px solid #AAA;
-  font-weight: 400;
-  font-size: 75%;
-  transition: 0.2s ease;
-  background-color: inherit;
-  font-family: inherit;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-textarea:focus {
-  border-bottom: 2px solid #16a085;
-  color: #16a085;
-  transition: 0.2s ease;
-}
-
-textarea {
-  height: 15em;
-  border: 1px solid #AAA;
-}
-
-textarea:focus {
-  border: 2px solid #16a085;
-}
-
-.myButton {
-  margin: 0 auto;
-  display: block;
-  width: 100%;
-  height: 4em;
-  background: #16a085;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: 0.1s ease;
-  cursor: pointer;
-  margin-top: 15%;
-
-}
-  
-.myButton:hover,
-.myButton:focus {
-  opacity: 0.8;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
-}
-
-.myButton:active {
-  opacity: 1;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  transition: 0.1s ease;
+    text-align: center;
 }
 
 p {
-  text-indent: 10%;
-  margin-bottom: 20%;
-  line-height: 1.5em;
+    text-indent: 2em;
+    margin-bottom: 5em;
+    line-height: 1.5em;
 }
 
 a {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-
-
-/* Tablet CSS */
-@media only screen and (min-width: 430px) {
-  body {
-    font-size: 1.7em;
-  }
-
-  #container {
-    margin: 0 auto;
-    width: 500px;
-    display: block;
-    padding: 2.4em;
-    margin-top: -2.5%;
-  }
-
-  .myButton {
-    font-size: inherit;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  input[type="number"],
-  textarea {
-    margin-bottom: 5em;
-  }
-
-  p {
-    text-indent: 13%;
-    margin-bottom: 10%;
-    line-height: 2em;
-    margin-bottom: 4em;
-  }
+    text-decoration: none;
 }
