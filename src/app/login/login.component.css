@@ -1,0 +1,10 @@
+p {
+    margin: initial;
+    text-align: center;
+    margin-top: 3em;
+    text-indent: initial;
+}
+
+p:last-child {
+    margin-top: 1.5em;
+}
