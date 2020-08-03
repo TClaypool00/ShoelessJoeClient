@@ -1,0 +1,18 @@
+.listOfShoes {
+    margin-bottom: 2em;
+    background-color: white;
+}
+
+.listOfShoes:hover {
+    border: 3px solid #4296cb;
+}
+
+img {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 80%;
+}
+
+p {
+    margin: initial;
+}
