@@ -25,10 +25,16 @@
     padding: 14px 16px;
     text-decoration: none;
     display: block;
+    padding: 1em;
 }
 
 .topnav a {
     color: #39393A;
+    border-bottom: .25em solid white;
+}
+
+.topnav a:last-child {
+    border: none;
 }
 
 .topnav a#ham {
@@ -38,6 +44,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    border: none;
 }
 
 .topnav a:hover {
