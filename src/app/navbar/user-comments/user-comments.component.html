@@ -5,9 +5,13 @@
         <div *ngFor="let comment of buyComments">
             <div *ngIf="this.currentUser.userId == this.comment.userId" class="buyComments">
                 <h3> {{this.comment.messageHead}} </h3>
-                <!-- <p>Shoe Owner: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}} </p> -->
-                {{this.comment.shoeId}}
-
+                <ul>
+                    <li>Date: {{this.comment?.commentDate}}</li>
+                    <li>Shoe Owner: {{this.comment?.shoeUserFirstName}} {{this.comment?.shoeUserLastName}}</li>
+                    <li>Manufacter: {{this.comment?.shoeManufacter}}</li>
+                    <li>Model: {{this.comment?.shoeModel}} </li>
+                </ul>
+                
                 <button class="myButton" (click)=getComment(this.comment.commentId)>Select Comment</button>
             </div>
         </div>
@@ -19,7 +23,13 @@
     <div *ngIf="sellComments.length > 0">
         <div *ngFor="let sellComment of sellComments">
             <div *ngIf="this.currentUser.userId == this.sellComment.shoeUserId">
-                <p> {{this.comment.commentId}} </p>
+                <h3> {{this.comment.messageHead}} </h3>
+                <ul>
+                    <li>Date: {{this.comment?.commentDate}}</li>
+                    <li>Potential Buyer: {{this.comment?.userFirstName}} {{this.comment?.userLastName}}</li>
+                    <li>Manufacter: {{this.comment?.shoeManufacter}}</li>
+                    <li>Model: {{this.comment?.shoeModel}} </li>
+                </ul>
                 <button class="myButton" (click)=getComment(this.sellComment.commentId)>Select Comment</button>
             </div>
         </div>
