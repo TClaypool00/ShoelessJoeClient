@@ -9,5 +9,10 @@ export interface Comments {
     userLastName:string;
 
     shoeId:number;
+    shoeManufacter?:string;
+    shoeModel?:string;
+
     shoeUserId:number;
+    shoeUserFirstName?:string;
+    shoeUserLastName?:string;
 }
