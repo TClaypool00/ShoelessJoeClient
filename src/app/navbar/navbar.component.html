@@ -1,11 +1,15 @@
 <nav id="navbar">
     <div class="topnav">
         <li id="logo">ShoelessJoe</li>
+        <li *ngIf="currentUser" id="logo"class="user" >Hi, {{currentUser?.firstName}}!</li>
         <div id="links">
             <a routerLink=''>Home </a>
             <a routerLink='/browse'> Browse</a>
             <a routerLink='/shoe-form'>Submit Shoe(s) </a>
+            <a *ngIf="currentUser" routerLink="/user/myComments">My Comments</a>
             <a routerLink='/tech-page'> Tech Page</a>
+            <a *ngIf="!currentUser" routerLink='/register'>Register/Login</a>
+            <a *ngIf="currentUser" (click)=logout()>Logout</a>
         </div>
         <a id="ham" (click)="toogle()">
             <i class="fa fa-bars"></i>

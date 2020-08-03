@@ -11,6 +11,10 @@
     color: white;
 }
 
+#logo.user{
+    margin-top: -2em;
+}
+
 .topnav {
     overflow: hidden;
     background-color: #297373;
@@ -55,4 +59,8 @@
 .active {
     background-color: #FC5130;
     color: black;
+}
+
+li {
+    margin-bottom: initial;
 }
