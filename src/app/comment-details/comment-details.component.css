@@ -1,0 +1,25 @@
+#replyHeader, #header {
+    margin: 0;
+    text-indent: 0;
+}
+
+#buyerSeller, #commentInfo, .owner, .buyer {
+    margin-bottom: 3em;
+    border: 2px solid #39393A;
+}
+
+#header {
+    border-bottom: 2px solid #39393A;
+}
+
+.owner {
+    background-color: #A07178;
+}
+
+.buyer {
+    background-color: #297373;
+}
+
+textarea {
+    height: 6em;
+}
