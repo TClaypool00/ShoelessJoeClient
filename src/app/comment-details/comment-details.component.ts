@@ -52,6 +52,8 @@ export class CommentDetailsComponent implements OnInit {
     }
 
     this.replYService.postReply(newReply);
+
+    body  = "";
   }
 
   async getReplies() {
