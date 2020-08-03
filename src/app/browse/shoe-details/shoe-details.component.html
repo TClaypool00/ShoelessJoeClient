@@ -4,16 +4,17 @@
 
     <h2 class="shoeHeader">{{this.currentShoe?.manufacter}}'s {{this.currentShoe?.model}}</h2>
     <div class="shoeInfo">
-        <p><b> Owner's Name:</b> {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}}</p>
-        <p>Color: {{this.currentShoe?.color}} </p>
-        <p>Right Size: {{this.currentShoe?.rightSize}} </p>
-        <p>Left Size: {{this.currentShoe?.leftSize}} </p>
-        <p *ngIf="this.currentShoe?.bothShoes == false ">Both Shoes? No </p>
-        <p *ngIf="this.currentShoe?.bothShoes == true ">Both Shoes? Yes </p>
-
-        <p *ngIf="this.currentShoe?.gender == false ">Women's</p>
-        <p *ngIf="this.currentShoe?.gender == true ">Men's </p>
-        <p> {{this.currentShoe?.description}} </p>
+        <ul>
+            <li><span>Owner's Name: </span>{{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}}</li>
+            <li><span>Color: </span>{{this.currentShoe?.color}}</li>
+            <li><span>Right Size: </span>{{this.currentShoe?.rightSize}}</li>
+            <li><span>Left Size: </span>{{this.currentShoe?.leftSize}}</li>
+            <li *ngIf="this.currentShoe?.bothShoes == false">Both Shoes? No</li>
+            <li *ngIf="this.currentShoe?.bothShoes == true">Both Shoes? Yes</li>
+            <li *ngIf="this.currentShoe?.gender == false">Men's</li>
+            <li *ngIf="this.currentShoe?.gender == true">Women's</li>
+            <li>{{this.currentShoe?.description}}</li>
+        </ul>
     </div>
 
     <button *ngIf="this.currentShoe?.userId != this.currentuser?.userId || this.currentShoe?.isSold == true"
