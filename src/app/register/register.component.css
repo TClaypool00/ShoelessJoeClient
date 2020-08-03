@@ -1,0 +1,28 @@
+#or {
+    width: 100%;
+    height: 5em;
+    background: #39393A;
+    color: #E6E6E6;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 40px;
+    text-align: center;
+    margin: 2.5em 0;
+    line-height: 5em;
+}
+
+.social-signin {
+    margin-bottom: 3em;
+}
+
+.facebook {
+    background: #32508E;
+}
+
+.twitter {
+    background: #55ACEE;
+}
+
+.google {
+    background: #DD4B39;
+}
