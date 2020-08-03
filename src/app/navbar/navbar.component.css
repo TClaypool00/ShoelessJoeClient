@@ -1,0 +1,51 @@
+#navbar {
+    width: 100%;
+    margin: inherit;
+    background-color: #E6E6E6;
+    color: white;
+    border-radius: 10px;
+}
+
+#logo {
+    background: #39393A;
+    color: white;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #297373;
+    position: relative;
+}
+
+.topnav #links {
+    display: none;
+}
+
+.topnav a, #navbar #logo {
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.topnav a {
+    color: #39393A;
+}
+
+.topnav a#ham {
+    background-color: #39393A;
+    color: white;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.topnav a:hover {
+    background-color: white;
+    color: 39393A;
+}
+
+.active {
+    background-color: #FC5130;
+    color: black;
+}

@@ -1,27 +1,14 @@
-<nav class="navbar">
-    <ul>
-        <a class="active"> ShoelessJoe <img src="../../assets/images/iconfinder_menu-alt_134216.png" alt="hamburger"
-                id="ham" (click)="toogle()"></a>
+<nav id="navbar">
+    <div class="topnav">
+        <li id="logo">ShoelessJoe</li>
         <div id="links">
-            <a routerLink="/home" class="menu-item">Home</a>
-            <a routerLink="/browse" class="menu-item">Browse</a>
-            <a routerLink="/shoe-form" class="menu-item"> Shoe Form</a>
-            <a routerLink="/tech-page" class="menu-item"> Technical Page </a>
-            <a *ngIf="currentUser?.isAdmin == true" routerLink="/register" class="menu-item right">Create User</a>
-            <a *ngIf="!currentUser" routerLink="/register" id="login"> Login/Register</a>
+            <a routerLink=''>Home </a>
+            <a routerLink='/browse'> Browse</a>
+            <a routerLink='/shoe-form'>Submit Shoe(s) </a>
+            <a routerLink='/tech-page'> Tech Page</a>
         </div>
-
-        <div class="dropdown" *ngIf="currentUser">
-            <a *ngIf="currentUser" id="user-name">Hi, {{ this.currentUser.firstName }}! <img *ngIf="currentUser"
-                    src="../../assets/images/noun_User_961.png" alt="User" id="user-icon" (click)= "toggleUser()" /></a>
-            <div id="user-links" *ngIf="currentUser">
-                <a routerLink="/user/myShoes"> My shoes </a>
-                <a routerLink="user/myComments"> My Comments</a>
-                <a routerLink="/user/profile"> Edit Profile </a>
-            </div>
-
-        </div>
-
-        <a id="logout" (click)="logout()" *ngIf="currentUser"> Logout</a>
-    </ul>
+        <a id="ham" (click)="toogle()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
 </nav>
