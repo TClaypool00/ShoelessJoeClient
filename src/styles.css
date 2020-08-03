@@ -15,9 +15,13 @@ body {
 }
 
 #container {
-    width: 80%;
+    width: 50%;
     display: block;
-    margin: 0 auto
+    margin: 0 auto;
+}
+
+#container.reading-page {
+    width: 80%;
 }
 
 h2 {
@@ -28,6 +32,13 @@ p {
     text-indent: 2em;
     margin-bottom: 5em;
     line-height: 1.5em;
+}
+
+img {
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5em;
 }
 
 a {
