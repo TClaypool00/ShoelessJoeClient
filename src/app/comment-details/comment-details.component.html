@@ -1,14 +1,18 @@
 <div id="container">
     <h2>Comment Details</h2>
     <div id="buyerSeller">
-        <p>Potential Buyer: {{this.currentComment?.userFirstName}} {{this.currentComment?.userLastName}} </p>
-        <p>Shoe Owner: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}} </p>
+        <ul>
+            <li>Potential Buyer: {{this.currentComment?.userFirstName}} {{this.currentComment?.userLastName}}</li>
+            <li>Shoe Owner: {{this.currentShoe?.userFirstName}} {{this.currentShoe?.userLastName}}</li>
+        </ul>
     </div>
 
     <div id="commentInfo">
-        <p id="header">{{this.currentComment?.messageHead}} </p>
-        <p> {{this.currentComment?.messageBody}} </p>
-        <p> <b>Date:</b> {{this.currentComment?.commentDate}} </p>
+        <ul>
+            <p id="header">{{this.currentComment?.messageHead}}</p>
+            <li>{{this.currentComment?.messageBody}}</li>
+            <li><b>Date:</b> {{this.currentComment?.commentDate}}</li>
+        </ul>
     </div>
 
     <div *ngFor="let reply of replies;">
@@ -16,8 +20,10 @@
         'owner': reply?.replyUserId == currentComment?.userId,
         'buyer': reply?.replyUserId == currentComment?.shoeUserId 
      }">
-            <p id="replyText">{{this.reply.replyBody}}</p>
-            <p> Date: {{this.reply.replyDate}} {{this.reply.replyFirstName}} {{this.reply.replyLastName}} </p>
+            <ul>
+                <li id="replyText">{{this.reply.replyBody}}</li>
+                <li>Date: {{this.reply.replyDate}} {{this.reply.replyFirstName}} {{this.reply.replyLastName}}</li>
+            </ul>
         </div>
     </div>
 
