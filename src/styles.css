@@ -48,7 +48,9 @@ button:active {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="number"],
+textarea {
     background-color: inherit;
     width: 100%;
     margin-bottom: 4em;
@@ -61,10 +63,33 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
     border-bottom: 4px solid #297373;
     color: #297373;
     transition: 0.2s ease;
+}
+
+textarea {
+    height: 11em;
+    border: 1px solid #39393A;
+}
+
+textarea:focus {
+    border: 4px solid #297373;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li, ol, li {
+    margin-bottom: 1em;
+}
+
+span {
+    font-weight: bold;
 }
 
 h2, h3 {
@@ -92,7 +117,6 @@ a {
 }
 
 /* Tablet CSS */
-
 @media only screen and (min-width: 750px) {
     body {
         font-size: 1.7em;
