@@ -26,7 +26,7 @@ button {
     font-size: inherit;
     height: 3em;
     text-align: center;
-    background-color: #FC5130;
+    background-color: #297373;
     border: none;
     border-radius: 2px;
     color: #39393A;
@@ -60,6 +60,13 @@ input[type="password"] {
     font-size: .90em;
 }
 
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-bottom: 4px solid #297373;
+    color: #297373;
+    transition: 0.2s ease;
+}
+
 h2 {
     text-align: center;
     margin-bottom: 2em;
@@ -80,5 +87,6 @@ img {
 
 a {
     text-decoration: none;
-    color: #297373;
+    color: #A07178;
+    font-weight: bold;
 }
